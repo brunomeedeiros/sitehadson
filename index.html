@@ -7,7 +7,7 @@
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link href="css/icons/all.min.css" rel="stylesheet">
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -17,11 +17,13 @@
 <header>
 
     <input type="checkbox" id="menu-bar">
-    <label for="menu-bar" class="fas fa-bars"></label>
+    <a href=""><i class="fa-light fa-bars"></i></a>
+    <label for="menu-bar" class="fa-light fa-bars"></label>
 
     <nav class="navbar">
         <a href="#orcamento">orçamento</a>
-        <a href="#instagram">instagram</a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-square-behance"></i></a>
     </nav>
 
 </header>
@@ -203,7 +205,9 @@
         </div>
 
         <div class="box">
-            <a href="#contact">Instagram</a>
+            <a href="">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
             <a href="#">Behance</a>
             <a href="#">Linkedin</a>
         </div>
@@ -214,7 +218,10 @@
     <h3 class="credit"> &copy; copyright @ 2023 by Bruno Medeiros </h3>
 
 </div>
-
+<script> import { library, icon } from '@fortawesome/fontawesome-svg-core'
+library.add(fa-brands)
+library.add(fa-instagram)
+</script>
 
 </body>
 </html>

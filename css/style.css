@@ -244,6 +244,18 @@ header label {
     color: black;
 }
 
+.fa-instagram {
+    font-size: 3rem;
+}
+
+.fa-square-behance {
+    font-size: 3rem;
+}
+
+.fa-bars {
+    font-size: 3rem;
+}
+
 .review .box-container {
     display: flex;
     align-items: center;
