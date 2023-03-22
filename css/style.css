@@ -175,7 +175,7 @@ header label {
 
 
 #name-feedback {
-    color: var(--blue);
+    color: var(--blueLight);
 }
 
 .features .box-container .box img {
@@ -499,6 +499,10 @@ div .contact {
 
     .proposal {
         background-position: right;
+    }
+
+    .title-main {
+        font-size: 10rem;
     }
 
 }
