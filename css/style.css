@@ -119,6 +119,10 @@ header label {
     display: none;
 }
 
+#orcamento-nav-bar {
+    font-size: 2.3rem;
+    text-shadow: black;
+}
 
 .home .image img {
     animation: float 3s linear infinite;
