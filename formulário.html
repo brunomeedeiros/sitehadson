@@ -2,102 +2,49 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Formulário de Contato</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: #fff;
-            color: #000;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        form {
-            margin: 0 auto;
-            width: 80%;
-            max-width: 800px;
-            padding: 20px;
-            border: 2px solid #000;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-        input[type="radio"], input[type="checkbox"] {
-            margin-right: 5px;
-        }
-        input[type="submit"] {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            float: right;
-        }
-        input[type="submit"]:hover {
-            background-color: #333;
-        }
-    </style>
+    <title>Formulário para proposta comercial</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-
-
-<body>
+<body class="formulario">
 <div class="container">
-    <h1>Formulário de Contato</h1>
+    <h1>Formulário para proposta comercial</h1>
+
 
     <form action="#" method="post">
-        <div class="form-group">
-            <label for="nome">Seu nome:</label>
-            <input type="text" id="nome" name="nome" required>
-        </div>
 
-        <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
+        <div class="inputs-form">
+            <div class="inputBox">
+                <input type="text" id="nome" placeholder="Seu nome" name="nome" required>
+            </div>
 
-        <div class="form-group">
-            <label for="whatsapp">WhatsApp (opcional):</label>
-            <input type="tel" id="whatsapp" name="whatsapp">
-        </div>
+            <div class="inputBox">
+                <input type="email" id="email" placeholder="E-mail" name="email" required>
+            </div>
 
-        <div class="form-group">
-            <label for="empresa">Nome da empresa:</label>
-            <input type="text" id="empresa" name="empresa" required>
-        </div>
+            <div class="inputBox">
+                <input type="text" id="whatsapp" placeholder="WhatsApp (opcional)" name="whatsapp">
+            </div>
 
-        <div class="form-group">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" required>
-        </div>
+            <div class="inputBox">
+                <input type="text" id="empresa" placeholder="Nome da empresa" name="empresa" required>
+            </div>
 
-        <div class="form-group">
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado" required>
-        </div>
+            <div class="inputBox">
+                <input type="text" id="cidade" placeholder="Cidade" name="cidade" required>
+            </div>
 
-        <div class="form-group">
-            <label for="site">Site da empresa (se houver):</label>
-            <input type="url" id="site" name="site">
-        </div>
+            <div class="inputBox">
+                <input type="text" id="estado" placeholder="Estado" name="estado" required>
+            </div>
 
-        <div class="form-group">
-            <label for="instagram">Instagram (se houver):</label>
-            <input type="url" id="instagram" name="instagram">
+            <div class="inputBox">
+                <input type="text" id="site" placeholder="Site da empresa (se houver)" name="site">
+            </div>
+
+            <div class="inputBox">
+                <input type="text" id="instagram" placeholder="Instagram (se houver)" name="instagram">
+            </div>
         </div>
 
         <div class="form-group">
@@ -111,16 +58,18 @@
         </div>
 
         <div class="form-group">
-            <label for="projeto">Por que precisa desse projeto? O que espera?</label>
+            <h2 for="projeto" style="margin-bottom: 10px">Por que precisa desse projeto? O que espera?</h2>
             <textarea id="projeto" name="projeto" rows="10" required></textarea>
         </div>
 
         <div class="form-group">
-            <h2 for="categoria">Categoria do projeto:</h2>
+            <h2 for="categoria">O que sua empresa faz/ vende</h2>
             <div class="radio-group">
                 <label><input type="radio" name="categoria" value="servicos">Serviços</label>
-                <label><input type="radio" name="categoria" value="barAlimentacao">Bar / Alimentação</label>
-                <label><input type="radio" name="categoria" value="produtosDigitais">Produtos digitais</label>
+                <label><input type="radio" name="categoria" value="barAlimentacao">Bar /
+                    Alimentação</label>
+                <label><input type="radio" name="categoria" value="produtosDigitais">Produtos
+                    digitais</label>
                 <label><input type="radio" name="categoria" value="roupasAcessorios">Roupas e acessórios</label>
                 <label><input type="radio" name="categoria" value="eletronicos">Eletrônicos</label>
                 <label><input type="radio" name="categoria" value="outros">Outros</label>
@@ -129,32 +78,40 @@
 
         <div class="form-group">
             <h2 for="empresa">Parte da empresa</h2>
-            <label><input type="radio" name="empresa" value="profissional-liberal">Profissional liberal</label>
+            <label><input type="radio" name="empresa" value="profissional-liberal">Profissional
+                liberal</label>
             <label><input type="radio" name="empresa" value="micro">Micro (2-10 funcionários)</label>
-            <label><input type="radio" name="empresa" value="pequena">Pequena (11-50 funcionários)</label>
+            <label><input type="radio" name="empresa" value="pequena">Pequena (11-50
+                funcionários)</label>
             <label><input type="radio" name="empresa" value="media">Média (51-100 funcionários)</label>
-            <label><input type="radio" name="empresa" value="grande">Grande (mais de 100 funcionários)</label>
+            <label><input type="radio" name="empresa" value="grande">Grande (mais de 100
+                funcionários)</label>
         </div>
 
         <div class="form-group">
             <h2>Além do logo, marque os itens que irá precisar para o projeto</h2>
-            <label><input type="checkbox" name="itens[]" value="templates-redes-sociais">Templates para as redes sociais</label>
+            <label><input type="checkbox" name="itens[]" value="templates-redes-sociais">Templates para
+                as redes sociais</label>
             <label><input type="checkbox" name="itens[]" value="cartao-visita">Cartão de visita</label>
-            <label><input type="checkbox" name="itens[]" value="cartao-visita-virtual">Cartão de visita virtual</label>
-            <label><input type="checkbox" name="itens[]" value="assinatura-email">Assinatura de e-mail</label>
+            <label><input type="checkbox" name="itens[]" value="cartao-visita-virtual">Cartão de visita
+                virtual</label>
+            <label><input type="checkbox" name="itens[]" value="assinatura-email">Assinatura de
+                e-mail</label>
             <label><input type="checkbox" name="itens[]" value="adesivo">Adesivo</label>
             <label><input type="checkbox" name="itens[]" value="cracha">Crachá</label>
             <label><input type="checkbox" name="itens[]" value="papel-timbrado">Papel timbrado</label>
             <label><input type="checkbox" name="itens[]" value="pasta-a4">Pasta A4</label>
-            <label><input type="checkbox" name="itens[]" value="brindes">Brindes (Ex: caneta/chaveiro/caneca)</label>
+            <label><input type="checkbox" name="itens[]" value="brindes">Brindes (Ex:
+                caneta/chaveiro/caneca)</label>
             <label><input type="checkbox" name="itens[]" value="uniforme">Uniforme</label>
             <label><input type="checkbox" name="itens[]" value="fachada">Fachada</label>
             <label><input type="checkbox" name="itens[]" value="outros">Outros</label>
         </div>
 
         <div class="form-group">
-            <h2>Tem alguma outra informação que queira acrescentar? Fique à vontade para me dizer</h2>
-            <textarea name="informacoes-adicionais" rows="10"></textarea>
+            <h2 style="margin-bottom: 10px">Tem alguma outra informação que queira acrescentar? Fique à vontade para me
+                dizer</h2>
+            <textarea placeholder="" name="informacoes-adicionais" rows="10"></textarea>
         </div>
 
         <div style="text-align:right;">
@@ -162,10 +119,8 @@
         </div>
 
 
-
     </form>
 </div>
-
 
 
 </body>

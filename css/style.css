@@ -14,13 +14,100 @@
 
 * {
     font-family: 'Outfit', Outfit;
-    color: var(--white);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
     border: none;
+}
+
+.container {
+    margin: 0 20% 0 20%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+/*input[type="text"], input[type="email"], textarea {*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid #ccc;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+div .form-group, h2{
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.inputs-form div {
+    border-bottom: 1px solid white;
+}
+
+.inputs-form .heading {
+    text-align: left;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.inputs-form  .inputBox {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.inputs-form  .inputBox input, .inputs-form  .inputBox textarea {
+    width: 100%;
+    margin: 1rem 0 1rem 0;
+    font-size: 1.7rem;
+    text-transform: none;
+}
+
+.inputs-form div {
+    border-bottom: 1px solid black;
+}
+
+
+.inputs-form  .inputBox input:focus ~ label,
+.inputs-form  .inputBox input:valid ~ label,
+.inputs-form  .inputBox textarea:focus ~ label,
+.inputs-form  .inputBox textarea:valid ~ label {
+    top: -.5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+div .contact {
+    padding: 9% 3rem 9% 3rem;
+}
+
+.contact form div {
+    border-bottom: 1px solid white;
+}
+
+div .form-group {
+    font-size: 1.6rem;
+    font-weight: normal;
 }
 
 *::selection {
@@ -36,6 +123,12 @@ html {
 body {
     background: #000000;
 }
+
+.formulario {
+    background: #ffffff;
+    color: #000000;
+}
+
 
 section {
     min-height: 100vh;
@@ -478,6 +571,11 @@ div .contact {
     html {
         font-size: 55%;
     }
+
+    .container {
+        margin: 0 9% 0 9%;
+    }
+
 
 }
 
