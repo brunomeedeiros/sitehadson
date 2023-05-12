@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+:root {
+    --white: #E5E5E5;
+    --blue: #1E2D4A;
+    --blueLight: #3f83e4;
+    --gradient: linear-gradient(90deg, var(--white), var(--blue));
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('fonts/Outfit-font.ttf');
+}
+
+* {
+    font-family: 'Outfit', Outfit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+.container {
+    margin: 0 20% 0 20%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+/*input[type="text"], input[type="email"], textarea {*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid #ccc;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+div .form-group, h2{
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.inputs-form div {
+    border-bottom: 1px solid white;
+}
+
+.inputs-form .heading {
+    text-align: left;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.inputs-form  .inputBox {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.inputs-form  .inputBox input, .inputs-form  .inputBox textarea {
+    width: 100%;
+    margin: 1rem 0 1rem 0;
+    font-size: 1.7rem;
+    text-transform: none;
+}
+
+.inputs-form div {
+    border-bottom: 1px solid black;
+}
+
+
+.inputs-form  .inputBox input:focus ~ label,
+.inputs-form  .inputBox input:valid ~ label,
+.inputs-form  .inputBox textarea:focus ~ label,
+.inputs-form  .inputBox textarea:valid ~ label {
+    top: -.5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+div .contact {
+    padding: 9% 3rem 9% 3rem;
+}
+
+.contact form div {
+    border-bottom: 1px solid white;
+}
+
+div .form-group {
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+*::selection {
+    background: var(--white);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #000000;
+}
+
+.formulario {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background: var(--gradient);
+    font-size: 1.7rem;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transition: all .3s linear;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+
+header .navbar a {
+    font-size: 1.7rem;
+    margin-left: 2rem;
+    color: black;
+}
+
+
+header input {
+    display: none;
+}
+
+header label {
+    font-size: 3rem;
+    color: var(--blue);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.navbar-hidden {
+    display: none;
+}
+
+#orcamento-nav-bar {
+    font-size: 2.3rem;
+    text-shadow: black;
+}
+
+.home .image img {
+    animation: float 3s linear infinite;
+    width: auto;
+    height: auto;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(-3.5rem);
+    }
+}
+
+.fa-instagram {
+    font-size: 3rem;
+}
+
+.fa-square-behance {
+    font-size: 3rem;
+}
+
+.fa-bars {
+    font-size: 3rem;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact .image {
+    flex: 1 1 40rem;
+}
+
+.contact .image img {
+    width: 100%;
+    padding: 2rem;
+}
+
+.contact form {
+    flex: 1 1 40rem;
+    padding: 9%;
+    border-radius: .5rem;
+    border-color: white;
+    background: black;
+}
+
+.contact form .heading {
+    text-align: left;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.contact form .inputBox {
+    position: relative;
+    margin: 5px;
+}
+
+.contact form .inputBox input, .contact form .inputBox textarea {
+    width: 100%;
+    background: black;
+    margin: 1rem;
+    font-size: 1.7rem;
+    text-transform: none;
+}
+
+.contact form .inputBox textarea {
+    resize: none;
+    height: 13rem;
+}
+
+.contact form .inputBox label {
+    top: 1.8rem;
+    left: 1.7rem;
+    font-size: 1.5rem;
+    transition: .2s linear;
+}
+
+.contact form div {
+    border-bottom: 1px solid white;
+}
+
+
+.contact form .inputBox input:focus ~ label,
+.contact form .inputBox input:valid ~ label,
+.contact form .inputBox textarea:focus ~ label,
+.contact form .inputBox textarea:valid ~ label {
+    top: -.5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+div .contact {
+    padding: 9% 3rem 9% 3rem;
+}
+
+@media (max-width: 1200px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .container {
+        margin: 0 9% 0 9%;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+    header input:checked ~ label::before {
+        content: '\f00d';
+    }
+}
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+}
+
+button {
+    background: var(--blueLight);
+    padding: .8rem 3rem;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    align-content: center;
+}
+
+#button-blue {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#button-white {
+    margin-top: 15px;
+    display: flex;
+    justify-content: right;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
