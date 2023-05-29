@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulário para proposta comercial</title>
+
     <link rel="stylesheet" href="css/formulario.css">
 
     <style>
@@ -19,168 +20,195 @@
 
     <header>
         <nav class="navbar" style="color:black">
-            <a href="https://www.instagram.com/hadsondesigner/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/hadsondesigner/" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
             <a href=""><i class="fa-brands fa-square-behance"></i></a>
         </nav>
     </header>
 
     <h1>Formulário para proposta comercial</h1>
 
-    <form action="sendEmail.php" method="post">
-
-        <div class="inputs-form">
-            <div class="inputBox">
-                <input type="text" id="nome" placeholder="Seu nome" name="nome" required>
-            </div>
-
-            <div class="inputBox">
-                <input type="email" id="email" placeholder="E-mail" name="email" required>
-            </div>
-
-            <div class="inputBox">
-                <input type="text" id="whatsapp" placeholder="WhatsApp (opcional)" name="whatsapp">
-            </div>
-
-            <div class="inputBox">
-                <input type="text" id="empresa" placeholder="Nome da empresa" name="empresa" required>
-            </div>
-
-            <div class="inputBox">
-                <input type="text" id="cidade" placeholder="Cidade" name="cidade" required>
-            </div>
-
-            <div class="inputBox">
-                <input type="text" id="estado" placeholder="Estado" name="estado" required>
-            </div>
-
-            <div class="inputBox">
-                <input type="text" id="site" placeholder="Site da empresa (se houver)" name="site">
-            </div>
-
-            <div class="inputBox">
-                <input type="text" id="instagram" placeholder="Instagram (se houver)" name="instagram">
-            </div>
-        </div>
-
+    <form action="formulario-sendEmail.php" method="post">
         <div class="form-group">
-            <h2 for="encontrou">Como me encontrou?</h2>
+            <div class="inputs-form">
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="nome" placeholder="Seu nome" name="nome" required>
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="email" id="email" placeholder="E-mail" name="email" required>
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="whatsapp" placeholder="WhatsApp (opcional)" name="whatsapp">
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="empresa" placeholder="Nome da empresa" name="empresa" required>
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="cidade" placeholder="Cidade" name="cidade" required>
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="estado" placeholder="Estado" name="estado" required>
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="site" placeholder="Site da empresa (se houver)" name="site">
+                    </label>
+                </div>
+
+                <div class="inputBox">
+                    <label>
+                        <input type="text" id="instagram" placeholder="Instagram (se houver)" name="instagram">
+                    </label>
+                </div>
+            </div>
+
+
+            <h2>Como me encontrou?</h2>
             <div class="radio-group">
-                <label><input type="radio" name="encontrou" value="google">Google</label>
-                <label><input type="radio" name="encontrou" value="instagram">Instagram</label>
-                <label><input type="radio" name="encontrou" value="indicacao">Indicação</label>
-                <label><input type="radio" name="encontrou" value="outros">Outros</label>
+                <label for="rg-google">
+                    <input type="radio" id="rg-google" name="encontrou" value="google">Google
+                </label>
+
+                <label for="rg-instagram">
+                    <input type="radio" id="rg-instagram" name="encontrou" value="instagram">Instagram
+                </label>
+
+                <label for="rg-indicacao">
+                    <input type="radio" id="rg-indicacao" name="encontrou" value="indicacao">Indicação
+                </label>
+
+                <label for="rg-outros">
+                    <input type="radio" id="rg-outros" name="encontrou" value="outros">Outros
+                </label>
             </div>
-        </div>
 
-        <div class="form-group">
-            <h2 for="projeto" style="margin-bottom: 10px">Por que precisa desse projeto? O que espera?</h2>
-            <textarea id="projeto" name="projeto" rows="10" required></textarea>
-        </div>
 
-        <div class="form-group">
-            <h2 for="categoria">O que sua empresa faz/ vende</h2>
+
+            <h2 style="margin-bottom: 10px">Por que precisa desse projeto? O que espera?</h2>
+            <label for="projeto">
+                <textarea id="projeto" name="projeto" rows="10" required></textarea>
+            </label>
+
+
+            <h2 for="categoria">O que a sua empresa faz/ vende</h2>
             <div class="radio-group">
-                <label><input type="radio" name="categoria" value="servicos">Serviços</label>
-                <label><input type="radio" name="categoria" value="barAlimentacao">Bar /
-                    Alimentação</label>
-                <label><input type="radio" name="categoria" value="produtosDigitais">Produtos
-                    digitais</label>
-                <label><input type="radio" name="categoria" value="roupasAcessorios">Roupas e acessórios</label>
-                <label><input type="radio" name="categoria" value="eletronicos">Eletrônicos</label>
-                <label><input type="radio" name="categoria" value="outros">Outros</label>
-            </div>
-        </div>
+                <label>
+                    <input type="radio" name="categoria" value="servicos">Serviços
+                </label>
 
-        <div class="form-group">
+                <label>
+                    <input type="radio" name="categoria" value="barAlimentacao">Bar / Alimentação
+                </label>
+
+                <label>
+                    <input type="radio" name="categoria" value="produtosDigitais">Produtos digitais
+                </label>
+
+                <label>
+                    <input type="radio" name="categoria" value="roupasAcessorios">Roupas e acessórios
+                </label>
+
+                <label>
+                    <input type="radio" name="categoria" value="eletronicos">Eletrônicos
+                </label>
+
+                <label>
+                    <input type="radio" name="categoria" value="outros">Outros
+                </label>
+
+            </div>
+
             <h2 for="empresa">Porte da empresa</h2>
-            <label><input type="radio" name="empresa" value="profissional-liberal">Profissional
-                liberal</label>
-            <label><input type="radio" name="empresa" value="micro">Micro (2-10 funcionários)</label>
-            <label><input type="radio" name="empresa" value="pequena">Pequena (11-50
-                funcionários)</label>
-            <label><input type="radio" name="empresa" value="media">Média (51-100 funcionários)</label>
-            <label><input type="radio" name="empresa" value="grande">Grande (mais de 100
-                funcionários)</label>
-        </div>
+            <label>
+                <input type="radio" name="empresa" value="profissional-liberal">Profissional liberal
+            </label>
 
-        <div class="form-group">
+            <label>
+                <input type="radio" name="empresa" value="micro">Micro (2-10 funcionários)
+            </label>
+
+            <label>
+                <input type="radio" name="empresa" value="pequena">Pequena (11-50 funcionários)
+            </label>
+
+            <label>
+                <input type="radio" name="empresa" value="media">Média (51-100 funcionários)
+            </label>
+
+            <label>
+                <input type="radio" name="empresa" value="grande">Grande (mais de 100 funcionários)
+            </label>
+
             <h2>Além do logo, marque os itens que irá precisar para o projeto</h2>
-            <label><input type="checkbox" name="itens[]" value="templates-redes-sociais">Templates para
-                as redes sociais</label>
-            <label><input type="checkbox" name="itens[]" value="cartao-visita">Cartão de visita</label>
-            <label><input type="checkbox" name="itens[]" value="cartao-visita-virtual">Cartão de visita
-                virtual</label>
-            <label><input type="checkbox" name="itens[]" value="assinatura-email">Assinatura de
-                e-mail</label>
-            <label><input type="checkbox" name="itens[]" value="adesivo">Adesivo</label>
-            <label><input type="checkbox" name="itens[]" value="cracha">Crachá</label>
-            <label><input type="checkbox" name="itens[]" value="papel-timbrado">Papel timbrado</label>
-            <label><input type="checkbox" name="itens[]" value="pasta-a4">Pasta A4</label>
-            <label><input type="checkbox" name="itens[]" value="brindes">Brindes (Ex:
-                caneta/chaveiro/caneca)</label>
-            <label><input type="checkbox" name="itens[]" value="uniforme">Uniforme</label>
-            <label><input type="checkbox" name="itens[]" value="fachada">Fachada</label>
-            <label><input type="checkbox" name="itens[]" value="outros">Outros</label>
-        </div>
+            <label>
+                <input type="checkbox" name="itens[]" value="templates-redes-sociais">Templates para as redes sociais
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="cartao-visita">Cartão de visita
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="cartao-visita-virtual">Cartão de visita virtual
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="assinatura-email">Assinatura de e-mail
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="adesivo">Adesivo
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="cracha">Crachá
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="papel-timbrado">Papel timbrado
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="pasta-a4">Pasta A4
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="brindes">Brindes (Ex: caneta/chaveiro/caneca)
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="uniforme">Uniforme
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="fachada">Fachada
+            </label>
+            <label>
+                <input type="checkbox" name="itens[]" value="outros">Outros
+            </label>
 
-        <div class="form-group">
             <h2 style="margin-bottom: 10px">Tem alguma outra informação que queira acrescentar? Fique à vontade para me
                 dizer</h2>
-            <textarea placeholder="" name="informacoes-adicionais" rows="10"></textarea>
+            <label>
+                <textarea placeholder="" name="informacoes-adicionais" rows="10"></textarea>
+            </label>
         </div>
 
         <div style="text-align:right;">
             <button type="submit" formaction="agradecimento.html">Enviar</button>
         </div>
-
-
     </form>
 
-    <script>
-        const form = document.getElementById('contact-form');
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const subjectInput = document.getElementById('subject');
-        const messageInput = document.getElementById('message');
-
-        form.addEventListener('submit', function(event) {
-            let isValid = true;
-
-            if (nameInput.value === '') {
-                alert('Por favor, preencha o campo "Nome".');
-                isValid = false;
-            }
-
-            if (emailInput.value === '') {
-                alert('Por favor, preencha o campo "E-mail".');
-                isValid = false;
-            } else if (!isValidEmail(emailInput.value)) {
-                alert('Por favor, insira um endereço de e-mail válido.');
-                isValid = false;
-            }
-
-            if (subjectInput.value === '') {
-                alert('Por favor, preencha o campo "Assunto".');
-                isValid = false;
-            }
-
-            if (messageInput.value === '') {
-                alert('Por favor, preencha o campo "Mensagem".');
-                isValid = false;
-            }
-
-            if (!isValid) {
-                event.preventDefault();
-            }
-        });
-
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-    </script>
 </div>
 
-
+<script src="formulario-controller.js"></script>
 </body>
 </html>
