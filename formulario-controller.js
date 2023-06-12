@@ -3,8 +3,9 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const subjectInput = document.getElementById('subject');
 const messageInput = document.getElementById('message');
+const submitButton = document.getElementById('submit-button');
 
-form.addEventListener('submit', function (event) {
+submitButton.addEventListener('click', function(event) {
     let isValid = true;
 
     if (nameInput.value === '') {
@@ -32,6 +33,10 @@ form.addEventListener('submit', function (event) {
 
     if (!isValid) {
         event.preventDefault();
+    } else {
+        form.action = 'enviar-email.php';
+        window.location.href = 'agradecimento.html';
+
     }
 });
 
