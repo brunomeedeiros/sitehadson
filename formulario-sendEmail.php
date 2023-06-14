@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['enviar'])) {
+if(isset($_POST['submit'])) {
 
     // Defina o destinatário e o remetente
 //    $to = "hadsondesigner@gmail.com";
@@ -41,7 +41,7 @@ if(isset($_POST['enviar'])) {
 
     if($enviaremail){
         $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
-        echo " <meta http-equiv='refresh' content='10;URL=contato.php'>";
+        echo " <meta http-equiv='refresh' content='2;URL=agradecimento.html'>";
     } else {
         $mgm = "ERRO AO ENVIAR E-MAIL!";
         echo "";
