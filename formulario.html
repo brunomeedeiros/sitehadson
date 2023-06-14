@@ -20,20 +20,16 @@
 
 <body class="formulario">
 <header>
-
-
     <i class="fa-solid fa-bars"></i>
-
     <nav class="navbar">
-        <a href="https://www.instagram.com/hadsondesigner/" target="_blank"><i class="fa-brands fa-instagram color-black"></i></a>
+        <a href="https://www.instagram.com/hadsondesigner/" target="_blank"><i
+                class="fa-brands fa-instagram color-black"></i></a>
         <a href=""><i class="fa-brands fa-square-behance color-black"></i></a>
     </nav>
-
 </header>
 <div class="container">
 
     <h1>Formulário para proposta comercial</h1>
-
     <form action="formulario-sendEmail.php" method="post">
         <div class="form-group">
             <div class="inputs-form">
@@ -88,115 +84,57 @@
 
             <h2>Como me encontrou?</h2>
             <div class="radio-group">
-                <label for="rg-google">
-                    <input type="radio" id="rg-google" name="encontrou" value="google">Google
-                </label>
-
-                <label for="rg-instagram">
-                    <input type="radio" id="rg-instagram" name="encontrou" value="instagram">Instagram
-                </label>
-
-                <label for="rg-indicacao">
-                    <input type="radio" id="rg-indicacao" name="encontrou" value="indicacao">Indicação
-                </label>
-
-                <label for="rg-outros">
-                    <input type="radio" id="rg-outros" name="encontrou" value="outros">Outros
-                </label>
+                <label for="rg-google"><input type="radio" id="rg-google" name="encontrou" value="google">Google</label>
+                <label for="rg-instagram"><input type="radio" id="rg-instagram" name="encontrou" value="instagram">Instagram</label>
+                <label for="rg-indicacao"><input type="radio" id="rg-indicacao" name="encontrou" value="indicacao">Indicação</label>
+                <label for="rg-outros"><input type="radio" id="rg-outros" name="encontrou" value="outros">Outros</label>
             </div>
 
             <h2 style="margin-bottom: 10px">Por que precisa desse projeto? O que espera?</h2>
             <label for="projeto">
                 <textarea id="projeto" name="projeto" rows="10" required style="width: 100%"></textarea>
             </label>
+            <div id="projeto-error" class="error-message"></div>
 
 
             <h2 for="categoria">O que a sua empresa faz/ vende</h2>
             <div class="radio-group">
-                <label>
-                    <input type="radio" name="categoria" value="servicos">Serviços
-                </label>
-
-                <label>
-                    <input type="radio" name="categoria" value="barAlimentacao">Bar / Alimentação
-                </label>
-
-                <label>
-                    <input type="radio" name="categoria" value="produtosDigitais">Produtos digitais
-                </label>
-
-                <label>
-                    <input type="radio" name="categoria" value="roupasAcessorios">Roupas e acessórios
-                </label>
-
-                <label>
-                    <input type="radio" name="categoria" value="eletronicos">Eletrônicos
-                </label>
-
-                <label>
-                    <input type="radio" name="categoria" value="outros">Outros
-                </label>
+                <label><input type="radio" name="categoria" value="servicos">Serviços</label>
+                <label><input type="radio" name="categoria" value="barAlimentacao">Bar / Alimentação</label>
+                <label><input type="radio" name="categoria" value="produtosDigitais">Produtos digitais</label>
+                <label><input type="radio" name="categoria" value="roupasAcessorios">Roupas e acessórios</label>
+                <label><input type="radio" name="categoria" value="eletronicos">Eletrônicos</label>
+                <label><input type="radio" name="categoria" value="outros">Outros</label>
 
             </div>
+            <div id="categoria-error" class="error-message"></div>
 
             <h2 for="empresa">Porte da empresa</h2>
-            <label>
-                <input type="radio" name="empresa" value="profissional-liberal">Profissional liberal
-            </label>
+            <div class="radio-group">
+                <label><input type="radio" name="empresa" value="profissional-liberal">Profissional liberal</label>
+                <label><input type="radio" name="empresa" value="micro">Micro (2-10 funcionários)</label>
+                <label><input type="radio" name="empresa" value="pequena">Pequena (11-50 funcionários)</label>
+                <label><input type="radio" name="empresa" value="media">Média (51-100 funcionários)</label>
+                <label><input type="radio" name="empresa" value="grande">Grande (mais de 100 funcionários)</label>
+            </div>
+            <div id="empresa-error" class="error-message"></div>
 
-            <label>
-                <input type="radio" name="empresa" value="micro">Micro (2-10 funcionários)
-            </label>
-
-            <label>
-                <input type="radio" name="empresa" value="pequena">Pequena (11-50 funcionários)
-            </label>
-
-            <label>
-                <input type="radio" name="empresa" value="media">Média (51-100 funcionários)
-            </label>
-
-            <label>
-                <input type="radio" name="empresa" value="grande">Grande (mais de 100 funcionários)
-            </label>
-
-            <h2>Além do logo, marque os itens que irá precisar para o projeto</h2>
-            <label>
-                <input type="checkbox" name="itens[]" value="templates-redes-sociais">Templates para as redes sociais
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="cartao-visita">Cartão de visita
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="cartao-visita-virtual">Cartão de visita virtual
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="assinatura-email">Assinatura de e-mail
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="adesivo">Adesivo
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="cracha">Crachá
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="papel-timbrado">Papel timbrado
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="pasta-a4">Pasta A4
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="brindes">Brindes (Ex: caneta/chaveiro/caneca)
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="uniforme">Uniforme
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="fachada">Fachada
-            </label>
-            <label>
-                <input type="checkbox" name="itens[]" value="outros">Outros
-            </label>
+            <h2 for="itens">Além do logo, marque os itens que irá precisar para o projeto</h2>
+            <div class="radio-group">
+                <label><input type="checkbox" name="itens[]" value="templates-redes-sociais">Templates para as redes sociais</label>
+                <label><input type="checkbox" name="itens[]" value="cartao-visita">Cartão de visita</label>
+                <label><input type="checkbox" name="itens[]" value="cartao-visita-virtual">Cartão de visita virtual</label>
+                <label><input type="checkbox" name="itens[]" value="assinatura-email">Assinatura de e-mail</label>
+                <label><input type="checkbox" name="itens[]" value="adesivo">Adesivo</label>
+                <label><input type="checkbox" name="itens[]" value="cracha">Crachá</label>
+                <label><input type="checkbox" name="itens[]" value="papel-timbrado">Papel timbrado</label>
+                <label><input type="checkbox" name="itens[]" value="pasta-a4">Pasta A4</label>
+                <label><input type="checkbox" name="itens[]" value="brindes">Brindes (Ex: caneta/chaveiro/caneca)</label>
+                <label><input type="checkbox" name="itens[]" value="uniforme">Uniforme</label>
+                <label><input type="checkbox" name="itens[]" value="fachada">Fachada</label>
+                <label><input type="checkbox" name="itens[]" value="outros">Outros</label>
+            </div>
+            <div id="itens-error" class="error-message"></div>
 
             <h2 style="margin-bottom: 10px">Tem alguma outra informação que queira acrescentar? Fique à vontade para me
                 dizer</h2>
