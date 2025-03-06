@@ -61,6 +61,8 @@ section {
     transform: scale(1.1);
 }
 
+/* -=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-= HEADER -=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-= */
+
 header {
     position: fixed;
     top: 0;
@@ -80,6 +82,14 @@ header .logo {
 
 header .logo span {
     color: var(--white);
+}
+
+header a {
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+header i {
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
 
 header .navbar a {
@@ -109,6 +119,16 @@ header label {
     align-items: flex-start;
     justify-content: center;
     text-align: center;
+}
+
+#orcamento-nav-bar {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
 }
 
 .imagem-largura-max img {
@@ -473,6 +493,20 @@ div .contact {
 
 /* media queries  */
 
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    label {
+        font-size: 1.7rem;
+    }
+
+    label input {
+        font-size: 1.7rem;
+    }
+}
+
 @media (max-width: 1200px) {
 
     html {
@@ -604,4 +638,8 @@ html {
     font-size: 3.5rem;
     text-transform: uppercase;
     padding: 1rem;
+}
+
+.cls-1 {
+    fill:#fff;
 }
