@@ -21,40 +21,41 @@ let checkItens = document.querySelectorAll('input[name="itens[]"]');
 let checkItensMarcado = false;
 let itensError = document.getElementById('itens-error');
 
-submitButton.addEventListener('click', function(event) {
+submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
     let isValid = true;
 
     if (nameInput.value === '') {
         alert('Por favor, preencha o campo "Nome".');
-        isValid = false;
-    }
-
-    if (whatsAppInput.value === '') {
-        alert('Por favor, preencha o campo "WhatsApp".');
-        isValid = false;
+        return;
     }
 
     if (emailInput.value === '') {
         alert('Por favor, preencha o campo "E-mail".');
-        isValid = false;
+        return;
     } else if (!isValidEmail(emailInput.value)) {
         alert('Por favor, insira um endereço de e-mail válido.');
-        isValid = false;
+        return;
+    }
+
+    if (whatsAppInput.value === '') {
+        alert('Por favor, preencha o campo "WhatsApp".');
+        return;
     }
 
     if (empresaInput.value === '') {
         alert('Por favor, preencha o campo "Empresa".');
-        isValid = false;
+        return;
     }
 
     if (cidadeInput.value === '') {
         alert('Por favor, preencha o campo "Cidade".');
-        isValid = false;
+        return;
     }
 
     if (estadoInput.value === '') {
         alert('Por favor, preencha o campo "Estado".');
-        isValid = false;
+        return;
     }
 
     for (let i = 0; i < radioComoEncontrou.length; i++) {
@@ -65,14 +66,14 @@ submitButton.addEventListener('click', function(event) {
     }
 
     if (!radioComoEncontrouMarcado) {
-        event.preventDefault();
         alert('Por favor, selecione como você nos encontrou.');
+        return;
     }
 
     if (projetoValue === '') {
-        event.preventDefault();
         projetoInput.classList.add('error');
         projetoError.textContent = 'Por favor, preencha este campo.';
+        return;
     } else {
         projetoInput.classList.remove('error');
         projetoError.textContent = '';
@@ -86,8 +87,8 @@ submitButton.addEventListener('click', function(event) {
     }
 
     if (!radioEmpresaFazVendeMarcado) {
-        event.preventDefault();
         categoriaError.textContent = 'Por favor, selecione uma categoria.';
+        return;
     } else {
         categoriaError.textContent = '';
     }
@@ -100,8 +101,8 @@ submitButton.addEventListener('click', function(event) {
     }
 
     if (!radioTamanhoEmpresaMarcado) {
-        event.preventDefault();
         empresaError.textContent = 'Por favor, selecione o porte da empresa.';
+        return;
     } else {
         empresaError.textContent = '';
     }
@@ -114,18 +115,36 @@ submitButton.addEventListener('click', function(event) {
     }
 
     if (!checkItensMarcado) {
-        event.preventDefault();
         itensError.textContent = 'Por favor, selecione pelo menos um item.';
+        return;
     } else {
         itensError.textContent = '';
     }
 
-    if (!isValid) {
-        event.preventDefault();
-    } else {
-        form.action = 'formulario-sendEmail.php';
-        window.location.href = 'agradecimento.html';
+    if (isValid) {
+        const formData = new FormData(form);
 
+        fetch('./api/send-email.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    window.location.href = './agradecimento.html';
+                } else {
+                    alert(data.message || 'Erro ao enviar o formulário. Por favor, tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+            });
     }
 });
 

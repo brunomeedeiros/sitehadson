@@ -28,6 +28,19 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/* Media query para telas desktop */
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0 15%;
+        /* Padding de 15% em cada lado para telas desktop */
+    }
+}
+
 label {
     display: block;
     margin-top: 20px;
@@ -131,7 +144,8 @@ label {
 
 /* -=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-= INPUTS -=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-= */
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     margin-right: 5px;
 }
 
@@ -148,7 +162,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #333;
 }
-div .form-group, h2{
+
+div .form-group,
+h2 {
     font-size: 2rem;
     margin-top: 20px;
 }
@@ -163,12 +179,13 @@ div .form-group, h2{
     padding-bottom: 2rem;
 }
 
-.inputs-form  .inputBox {
+.inputs-form .inputBox {
     position: relative;
     margin-top: 2rem;
 }
 
-.inputs-form  .inputBox input, .inputs-form  .inputBox textarea {
+.inputs-form .inputBox input,
+.inputs-form .inputBox textarea {
     width: 100%;
     margin: 1rem 0 1rem 0;
     font-size: 1.7rem;
@@ -198,20 +215,24 @@ div .form-group {
 /* -=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-= MEDIA & KEYFRAMES -=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-= */
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0rem);
     }
+
     50% {
         transform: translateY(-3.5rem);
     }
 }
 
-@media screen and (min-width: 768px)  {
+@media screen and (min-width: 768px) {
     label {
         display: block;
         margin-top: 20px;
         font-size: 1.7rem;
     }
+
     label input {
         font-size: 1.7rem;
     }
@@ -221,6 +242,7 @@ div .form-group {
     .container {
         margin: 0 9% 0 9%;
     }
+
     html {
         font-size: 55%;
     }
@@ -228,7 +250,7 @@ div .form-group {
 
 @media (max-width: 768px) {
 
-    header input:checked ~ label::before {
+    header input:checked~label::before {
         content: '\f00d';
     }
 }

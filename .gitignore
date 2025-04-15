@@ -1,0 +1,20 @@
+# Arquivos de configuração com credenciais
+config/credentials.php
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+error_log
+php_error_log
+
+# Arquivos temporários
+*.tmp
+*.temp 
