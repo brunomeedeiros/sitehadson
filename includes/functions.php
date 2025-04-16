@@ -3,6 +3,12 @@
  * Funções auxiliares para o site
  */
 
+
+namespace HadsonSendMail\SendMail;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+require_once 'src/PHPMailer.php';
+
 /**
  * Sanitiza e valida os dados do formulário
  * @param array $data Dados do formulário

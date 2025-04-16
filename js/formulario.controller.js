@@ -1,27 +1,41 @@
-const form = document.getElementById('contact-form');
-const nameInput = document.getElementById('nome');
-const emailInput = document.getElementById('email');
-const whatsAppInput = document.getElementById('whatsapp');
-const empresaInput = document.getElementById('empresa');
-const cidadeInput = document.getElementById('cidade');
-const estadoInput = document.getElementById('estado');
 const submitButton = document.getElementById('submit-button');
-const radioComoEncontrou = document.querySelectorAll('input[name="encontrou"]');
-let radioComoEncontrouMarcado = false;
-let projetoInput = document.getElementById('projeto');
-let projetoError = document.getElementById('projeto-error');
-let projetoValue = projetoInput.value;
-let radioEmpresaFazVende = document.querySelectorAll('input[name="categoria"]');
-let radioEmpresaFazVendeMarcado = false;
-let categoriaError = document.getElementById('categoria-error');
-let radioTamanhoEmpresa = document.querySelectorAll('input[name="empresa"]');
-let radioTamanhoEmpresaMarcado = false;
-let empresaError = document.getElementById('empresa-error');
-let checkItens = document.querySelectorAll('input[name="itens[]"]');
-let checkItensMarcado = false;
-let itensError = document.getElementById('itens-error');
+
 
 submitButton.addEventListener('click', function (event) {
+    const form = document.getElementById('contact-form');
+    const nameInput = document.getElementById('nome');
+    const emailInput = document.getElementById('email');
+    const whatsAppInput = document.getElementById('whatsapp');
+    const empresaInput = document.getElementById('empresa');
+    const cidadeInput = document.getElementById('cidade');
+    const estadoInput = document.getElementById('estado');
+    const siteInput = document.getElementById('site');
+    const instagramInput = document.getElementById('instagram');
+    const encontrouRadio = document.querySelector('input[name="encontrou"]:checked');
+    const porquePrecisaDoProjetoInput = document.getElementById('projeto');
+    const categoriaRadio = document.querySelector('input[name="categoria"]:checked');
+    const porteRadio = document.querySelector('input[name="porte"]:checked');
+    const checkboxesSelecionados = document.querySelectorAll('input[name="itens[]"]:checked');
+    const listaDeItens = Array.from(checkboxesSelecionados).map(checkbox => checkbox.value);
+    const infosAdicionaisInput = document.getElementById('informacoes-adicionais');
+
+    const radioComoEncontrou = document.querySelectorAll('input[name="encontrou"]');
+    let radioComoEncontrouMarcado = false;
+    let projetoInput = document.getElementById('projeto');
+    let projetoError = document.getElementById('projeto-error');
+    let projetoValue = projetoInput.value;
+    let radioEmpresaFazVende = document.querySelectorAll('input[name="categoria"]');
+    let radioEmpresaFazVendeMarcado = false;
+    let categoriaError = document.getElementById('categoria-error');
+    let radioTamanhoEmpresa = document.querySelectorAll('input[name="porte"]');
+    let radioTamanhoEmpresaMarcado = false;
+    let empresaError = document.getElementById('empresa-error');
+    let checkItens = document.querySelectorAll('input[name="itens[]"]');
+    let checkItensMarcado = false;
+    let itensError = document.getElementById('itens-error');
+
+
+
     event.preventDefault();
     let isValid = true;
 
@@ -123,10 +137,26 @@ submitButton.addEventListener('click', function (event) {
 
     if (isValid) {
         const formData = new FormData(form);
+        let formulario = {
+            nome: nameInput.value,
+            email: emailInput.value,
+            whatsApp: whatsAppInput.value,
+            empresa: empresaInput.value,
+            cidade: cidadeInput.value,
+            estado: estadoInput.value,
+            site: siteInput.value,
+            encontrouSelecionado: encontrouRadio.value,
+            porquePrecisaProjeto: porquePrecisaDoProjetoInput.value,
+            categoriaEmpresa: categoriaRadio.value,
+            porte: porteRadio.value,
+            itensParaProjeto: listaDeItens,
+            infosAdicionais: infosAdicionaisInput.value,
+        }
 
-        fetch('./api/send-email.php', {
+        fetch('/api/send-email.php', {
             method: 'POST',
-            body: formData
+            body: formulario,
+            signal: AbortSignal.timeout(30000)
         })
             .then(response => {
                 if (!response.ok) {

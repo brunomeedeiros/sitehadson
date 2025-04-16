@@ -4,6 +4,9 @@ header('Content-Type: application/json');
 require_once 'src/PHPMailer.php';
 require_once 'src/SMTP.php';
 require_once 'src/Exception.php';
+require_once 'api/send-email.php';
+require_once 'config/credentials.php';
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -15,13 +18,13 @@ try {
     // Configurações do servidor SMTP
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'contato.thehadson@gmail.com';
-    $mail->Password = 'yfac rxvs zhxd jrdi';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
     $mail->CharSet = 'UTF-8';
+    $mail->Host = SMTP_HOST;
+    $mail->Username = SMTP_USERNAME;
+    $mail->Password = SMTP_PASSWORD;
+    $mail->SMTPSecure = SMTP_SECURE;
+    $mail->Port = SMTP_PORT;
 
     // Configurações do e-mail
     $mail->setFrom('contato.thehadson@gmail.com', 'Hadson Design');

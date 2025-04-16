@@ -1,16 +1,10 @@
 <?php
 header('Content-Type: application/json');
+require_once __DIR__ . '/../includes/functions.php';
 
-// Carrega as configurações e dependências
-require_once '../config/credentials.php';
-require_once '../src/PHPMailer.php';
-require_once '../src/SMTP.php';
-require_once '../src/Exception.php';
-require_once '../includes/functions.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use HadsonSendMail\SendMail;
 
 try {
     // Verifica se é uma requisição POST
@@ -19,16 +13,16 @@ try {
     }
 
     // Sanitiza os dados do formulário
-    $formData = sanitizeFormData($_POST);
+    $formData = SendMail\sanitizeFormData($_POST);
 
     // Configura o PHPMailer
-    $mail = setupPHPMailer();
+    $mail = SendMail\setupPHPMailer();
 
     // Configura o conteúdo do email
     $mail->isHTML(true);
     $mail->Subject = 'Nova solicitação de orçamento';
-    $mail->Body = generateEmailBody($formData);
-    $mail->AltBody = strip_tags(generateEmailBody($formData));
+    $mail->Body = SendMail\generateEmailBody($formData);
+    $mail->AltBody = strip_tags(SendMail\generateEmailBody($formData));
 
     // Envia o email
     if ($mail->send()) {
