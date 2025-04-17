@@ -166,6 +166,9 @@ submitButton.addEventListener('click', function (event) {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                if (data.success) {
+                    window.location.href = './agradecimento.html';
+                }
                 return response.json();
             })
             .then(data => {
