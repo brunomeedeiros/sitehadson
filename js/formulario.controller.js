@@ -2,7 +2,6 @@ const submitButton = document.getElementById('submit-button');
 
 
 submitButton.addEventListener('click', function (event) {
-    const form = document.getElementById('contact-form');
     const nameInput = document.getElementById('nome');
     const emailInput = document.getElementById('email');
     const whatsAppInput = document.getElementById('whatsapp');
@@ -136,7 +135,6 @@ submitButton.addEventListener('click', function (event) {
     }
 
     if (isValid) {
-        const formData = new FormData(form);
         let formulario = {
             nome: nameInput.value,
             email: emailInput.value,
@@ -145,17 +143,23 @@ submitButton.addEventListener('click', function (event) {
             cidade: cidadeInput.value,
             estado: estadoInput.value,
             site: siteInput.value,
+            instagram : instagramInput.value,
             encontrouSelecionado: encontrouRadio.value,
             porquePrecisaProjeto: porquePrecisaDoProjetoInput.value,
             categoriaEmpresa: categoriaRadio.value,
             porte: porteRadio.value,
             itensParaProjeto: listaDeItens,
             infosAdicionais: infosAdicionaisInput.value,
-        }
+        };
+
+        console.log(JSON.stringify(formulario));
 
         fetch('/api/send-email.php', {
             method: 'POST',
-            body: formulario,
+            headers: {
+                'Content-Type': 'application/json', // Adiciona o cabeçalho para JSON
+            },
+            body: JSON.stringify(formulario), // Converte o formulário para JSON
             signal: AbortSignal.timeout(30000)
         })
             .then(response => {

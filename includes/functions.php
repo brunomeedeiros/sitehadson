@@ -1,13 +1,13 @@
 <?php
-/**
- * Funções auxiliares para o site
- */
+    namespace HadsonSendMail\SendMail;
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+
+    require_once __DIR__ . '/../src/PHPMailer.php';
+    require_once __DIR__ . '/../src/SMTP.php';
 
 
-namespace HadsonSendMail\SendMail;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-require_once 'src/PHPMailer.php';
 
 /**
  * Sanitiza e valida os dados do formulário
@@ -36,6 +36,21 @@ function sanitizeFormData($data)
  */
 function generateEmailBody($data)
 {
+    // Lê os dados JSON da requisição
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    if (!$data) {
+        die('Erro: Nenhum dado foi recebido!');
+    }
+
+    var_dump($data); // Para depurar e ver o conteúdo dos dados
+
+    // Verifique se o valor não é nulo antes de passar para nl2br()
+    $projeto = isset($data['porquePrecisaProjeto']) ? nl2br($data['porquePrecisaProjeto']) : '';
+    $informacoesAdicionais = isset($data['infosAdicionais']) ? nl2br($data['infosAdicionais']) : '';
+    // Exibe os itens para o projeto
+    $itensParaProjeto = isset($data['itensParaProjeto']) && is_array($data['itensParaProjeto']) ? implode('<br>', $data['itensParaProjeto']) : 'Nenhum item selecionado';
+
     return "
     <h2>📋 Nova solicitação de orçamento</h2>
     <p><strong>👤 Nome:</strong> {$data['nome']}</p>
@@ -46,11 +61,13 @@ function generateEmailBody($data)
     <p><strong>🌎 Estado:</strong> {$data['estado']}</p>
     <p><strong>🌐 Site:</strong> {$data['site']}</p>
     <p><strong>📸 Instagram:</strong> {$data['instagram']}</p>
-    <p><strong>🔍 Como me encontrou:</strong> {$data['encontrou']}</p>
-    <p><strong>💡 Por que precisa desse projeto? O que espera?:</strong><br>" . nl2br($data['projeto']) . "</p>
-    <p><strong>🏭 O que sua empresa faz/vende:</strong> {$data['categoria']}</p>
-    <p><strong>📊 Tamanho da empresa:</strong> {$data['empresa']}</p>
-    <p><strong>📝 Informações adicionais:</strong><br>" . nl2br($data['informacoes-adicionais']) . "</p>";
+    <p><strong>🔍 Como me encontrou:</strong> {$data['encontrouSelecionado']}</p>
+    <p><strong>💡 Por que precisa desse projeto? O que espera?:</strong><br>{$projeto}</p>
+    <p><strong>🏭 O que sua empresa faz/vende:</strong> {$data['categoriaEmpresa']}</p>
+    <p><strong>📊 Tamanho da empresa:</strong> {$data['porte']}</p>
+    <p><strong>📝 Informações adicionais:</strong><br>{$informacoesAdicionais}</p>
+    <p><strong>🛠️ Itens para o projeto:</strong><br>{$itensParaProjeto}</p>";
+
 }
 
 /**
@@ -67,13 +84,13 @@ function setupPHPMailer()
         error_log("PHPMailer Debug: $str");
     };
     $mail->isSMTP();
-    $mail->Host = SMTP_HOST;
+    $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = SMTP_USERNAME;
-    $mail->Password = SMTP_PASSWORD;
-    $mail->SMTPSecure = SMTP_SECURE;
-    $mail->Port = SMTP_PORT;
-    $mail->CharSet = SMTP_CHARSET;
+    $mail->Username = 'contato.thehadson@gmail.com';
+    $mail->Password = 'yfac rxvs zhxd jrdi';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+    $mail->CharSet = 'UTF-8';
 
     // Configurações adicionais de segurança
     $mail->SMTPOptions = array(
@@ -85,8 +102,8 @@ function setupPHPMailer()
     );
 
     // Configurações do e-mail
-    $mail->setFrom(SMTP_FROM_EMAIL, SMTP_FROM_NAME);
-    $mail->addAddress(SMTP_TO_EMAIL);
+    $mail->setFrom('contato.thehadson@gmail.com', 'Hadson Design');
+    $mail->addAddress('brunos.hgm@gmail.com');
 
     return $mail;
 }
