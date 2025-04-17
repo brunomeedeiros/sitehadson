@@ -103,7 +103,7 @@ function setupPHPMailer()
 
     // Configurações do e-mail
     $mail->setFrom('contato.thehadson@gmail.com', 'Hadson Design');
-    $mail->addAddress('brunos.hgm@gmail.com');
+    $mail->addAddress('contato.thehadson@gmail.com');
 
     return $mail;
 }

@@ -2,7 +2,6 @@
 header('Content-Type: application/json');
 require_once __DIR__ . '/../includes/functions.php';
 
-
 use PHPMailer\PHPMailer\Exception;
 use HadsonSendMail\SendMail;
 
@@ -35,6 +34,8 @@ try {
     }
 } catch (Exception $e) {
     error_log("Erro PHPMailer: " . $e->getMessage());
+
+    // Resposta JSON com informações detalhadas sobre o erro
     echo json_encode([
         'success' => false,
         'message' => 'ERRO AO ENVIAR E-MAIL: ' . $e->getMessage(),
